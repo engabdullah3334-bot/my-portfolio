@@ -1,0 +1,29 @@
+{
+  "name": "Abdullah Adel — Portfolio",
+  "short_name": "AA Portfolio",
+  "description": "Mechatronics Engineering Student | AI & Full-Stack Developer | Cairo, Egypt",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0e1a",
+  "theme_color": "#00d4ff",
+  "categories": ["portfolio", "developer", "engineering"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icons/icon.svg",     "sizes": "any",      "type": "image/svg+xml" }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "View Projects",
+      "url": "/#projects",
+      "description": "Jump directly to featured projects"
+    },
+    {
+      "name": "Contact",
+      "url": "mailto:engabdullah3334@gmail.com",
+      "description": "Send an email"
+    }
+  ]
+}

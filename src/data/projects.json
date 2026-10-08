@@ -1,0 +1,97 @@
+{
+  "featured": [
+    {
+      "id": "lifeos",
+      "rank": 1,
+      "title": "LifeOS",
+      "subtitle": "Personal Life Management System",
+      "category": "fullstack",
+      "year": "2026",
+      "description": "A full-stack productivity platform combining task management, structured note-taking, and a context-aware AI assistant in a single unified workspace.",
+      "highlights": [
+        "AI Action System — assistant creates/updates/deletes tasks & notes directly in MongoDB",
+        "AI provider waterfall: Gemini → Grok → Ollama for zero-crash fail-safe responses",
+        "JWT authentication, drag-and-drop ordering, recurrence engine & full UI customization",
+        "Layered architecture: routes → core → MongoDB with config-driven schema factory"
+      ],
+      "tech": ["Python", "Flask", "MongoDB", "JWT", "Gemini API", "Grok", "Ollama", "AI Agents"],
+      "github": "https://github.com",
+      "demo": "https://life-os-six-zeta.vercel.app/",
+      "video": null,
+      "status": "Active"
+    },
+    {
+      "id": "omnitranslate",
+      "rank": 2,
+      "title": "OmniTranslate Agent",
+      "subtitle": "AI-Powered Document Translator",
+      "category": "aipipeline",
+      "year": "2026",
+      "description": "A two-phase AI pipeline combining LLaMA 3 for structural analysis and NLLB-200 for neural machine translation across 200+ languages.",
+      "highlights": [
+        "LLaMA 3 via Ollama for language detection & document structural analysis",
+        "NLLB-200 (HuggingFace) for neural translation across 200+ languages",
+        "Memory-safe sequential model execution — peak RAM under 4 GB on consumer hardware",
+        "Supports PDF, TXT, raw text; preserves formatting and outputs translated PDF"
+      ],
+      "tech": ["Python", "LLaMA 3", "NLLB-200", "HuggingFace", "PyMuPDF", "Ollama"],
+      "github": "https://github.com",
+      "demo": null,
+      "video": null,
+      "techSheet": "/omnitranslate-architecture.pdf",
+      "status": "Published"
+    },
+    {
+      "id": "multiagent",
+      "rank": 3,
+      "title": "AI Multi-Agent Platform",
+      "subtitle": "Professional Desktop Chat Application",
+      "category": "desktop",
+      "year": "2025–2026",
+      "description": "A professional multi-agent chat platform with persistent conversation history, context memory using sliding window, and specialized AI bots.",
+      "highlights": [
+        "Multi-agent architecture: general chat bot + developer/coding assistant",
+        "Persistent SQLite conversation history with sliding window context memory",
+        "Interactive sidebar with live stats, session archive & full OOP structure",
+        "Custom CSS UI built with Streamlit for a polished professional look"
+      ],
+      "tech": ["Python", "Streamlit", "Ollama", "SQLite", "LLaMA 3", "OOP"],
+      "github": "https://github.com",
+      "demo": null,
+      "video": null,
+      "status": "Complete"
+    }
+  ],
+  "others": [
+    {
+      "id": "robot",
+      "rank": null,
+      "title": "Autonomous Robot",
+      "subtitle": "Embedded AI Integration",
+      "category": "embedded",
+      "year": "2024–2025",
+      "description": "Arduino-based autonomous robot integrating motors, sensors, and AI-enhanced behavior via Python. Full circuit design and assembly.",
+      "highlights": [],
+      "tech": ["Arduino", "C / C++", "Python", "Circuit Design"],
+      "github": "https://github.com",
+      "demo": null,
+      "video": null,
+      "status": "Complete"
+    },
+    {
+      "id": "coming-soon",
+      "rank": null,
+      "title": "More Projects Coming",
+      "subtitle": "In Development",
+      "category": "soon",
+      "year": "2026",
+      "description": "Several projects including a syndicate management system are being polished for release. Follow on GitHub to be notified.",
+      "highlights": [],
+      "tech": ["Stay Tuned"],
+      "github": null,
+      "demo": null,
+      "video": null,
+      "status": "In Progress"
+    }
+  ]
+}
