@@ -1,14 +1,6 @@
 /**
- * Tech stack icon registry.
- *
- * Each entry has either:
- *  - `src`   → Devicon CDN image (real logo)
- *  - `emoji` → fallback for techs without a Devicon
- *
- * `invert: true` → applies CSS filter for icons that are black on transparent
- * `color`        → accent color used for emoji-badge background tint
+ * Tech stack icon registry with Devicon CDN SVG icons and emoji fallbacks.
  */
-
 export const TECH_ICONS = {
   /* ── Languages ─────────────────────────────── */
   Python: {
@@ -19,6 +11,9 @@ export const TECH_ICONS = {
   },
   JavaScript: {
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+  },
+  TypeScript: {
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
   },
 
   /* ── Backend / DB ───────────────────────────── */
@@ -32,9 +27,20 @@ export const TECH_ICONS = {
   SQLite: {
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg',
   },
+  PostgreSQL: {
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+  },
   JWT: {
     emoji: '🔐',
     color: '#EF4444',
+  },
+
+  /* ── Frontend ───────────────────────────────── */
+  React: {
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+  },
+  Tailwind: {
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
   },
 
   /* ── AI / ML ────────────────────────────────── */
@@ -104,10 +110,6 @@ export const TECH_ICONS = {
   },
 }
 
-/**
- * Returns icon metadata for a given tech name.
- * Falls back to a letter-badge if the tech is unknown.
- */
 export function getTechIcon(name) {
   return TECH_ICONS[name] ?? { emoji: name.charAt(0).toUpperCase(), color: '#64748B' }
 }

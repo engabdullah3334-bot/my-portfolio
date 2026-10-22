@@ -2,38 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap');
+@layer base {
+  :root {
+    --cyber-bg: #0a0e1a;
+    --cyber-surface: #0f1629;
+    --cyber-card: #131d35;
+    --cyber-border: #1e2d4d;
+    --cyber-cyan: #00d4ff;
+    --cyber-blue: #3b82f6;
+    --cyber-purple: #8b5cf6;
+    --cyber-emerald: #10b981;
+  }
 
-/* ─── Global Reset ─────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--cyber-bg);
+  }
+
+  body {
+    background-color: var(--cyber-bg);
+    color: #e2e8f0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0e1a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e2d4d;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00d4ff;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+/* Hide native cursor when custom cursor is active on fine-pointer devices */
+.custom-cursor-active,
+.custom-cursor-active * {
+  cursor: none !important;
 }
 
-body {
-  margin: 0;
-  background-color: #0a0e1a;
-  color: #e2e8f0;
-  font-family: 'Inter', system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
-#root {
+/* Background PCB Canvas Wires */
+#wires {
+  position: fixed;
+  inset: 0;
   width: 100%;
-  min-height: 100svh;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* ─── Custom scrollbar ─────────────────────────────────── */
-::-webkit-scrollbar        { width: 6px; }
-::-webkit-scrollbar-track  { background: #0a0e1a; }
-::-webkit-scrollbar-thumb  { background: #00d4ff40; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #00d4ff80; }
+/* Caret Blinking */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
-/* ─── Selection ────────────────────────────────────────── */
-::selection {
-  background: rgba(0, 212, 255, 0.25);
-  color: #fff;
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Scanline repeating pattern */
+.scanlines-overlay {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 212, 255, 0.12) 2px,
+    rgba(0, 212, 255, 0.12) 4px
+  );
 }

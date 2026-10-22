@@ -1,0 +1,156 @@
+/**
+ * Fallback static projects data.
+ * Used whenever Supabase credentials are not provided or network is unreachable.
+ * This guarantees zero downtime and instant local preview.
+ */
+export const FALLBACK_PROJECTS = [
+  {
+    id: "f83b276d-8d4e-4e44-8cb5-e4d6bf173491",
+    slug: "lifeos",
+    rank: 1,
+    title: "LifeOS",
+    subtitle: "Personal Life Management System",
+    category: "fullstack",
+    year: "2026",
+    status: "Active",
+    is_featured: true,
+    description: "A full-stack productivity platform combining task management, structured note-taking, and a context-aware AI assistant in a single unified workspace.",
+    highlights: [
+      "AI Action System — assistant creates/updates/deletes tasks & notes directly in MongoDB",
+      "AI provider waterfall: Gemini → Grok → Ollama for zero-crash fail-safe responses",
+      "JWT authentication, drag-and-drop ordering, recurrence engine & full UI customization",
+      "Layered architecture: routes → core → MongoDB with config-driven schema factory"
+    ],
+    details: "LifeOS was architected to eliminate productivity fragmentation. It integrates stateful conversational AI agents with database-level mutations. The user can instruct the natural language assistant to organize daily tasks, generate study summaries, and prioritize backlog items. Built using an asynchronous waterfall model across Gemini 1.5 Pro, Grok 2, and local Ollama, ensuring uninterrupted service with zero crashes.",
+    tech: ["Python", "Flask", "MongoDB", "JWT", "Gemini API", "Grok", "Ollama", "AI Agents"],
+    github_url: "https://github.com",
+    demo_url: "https://life-os-six-zeta.vercel.app/",
+    video_url: null,
+    tech_sheet_url: null,
+    custom_links: [
+      { label: "AI Flow Chart", url: "https://github.com" }
+    ],
+    image_path: null,
+    gallery: [],
+    sort_order: 1,
+    published: true,
+    views_count: 142
+  },
+  {
+    id: "c94d129a-251c-43f1-b1e8-78280f2d4822",
+    slug: "omnitranslate",
+    rank: 2,
+    title: "OmniTranslate Agent",
+    subtitle: "AI-Powered Document Translator",
+    category: "aipipeline",
+    year: "2026",
+    status: "Published",
+    is_featured: true,
+    description: "A two-phase AI pipeline combining LLaMA 3 for structural analysis and NLLB-200 for neural machine translation across 200+ languages.",
+    highlights: [
+      "LLaMA 3 via Ollama for language detection & document structural analysis",
+      "NLLB-200 (HuggingFace) for neural translation across 200+ languages",
+      "Memory-safe sequential model execution — peak RAM under 4 GB on consumer hardware",
+      "Supports PDF, TXT, raw text; preserves formatting and outputs translated PDF"
+    ],
+    details: "OmniTranslate Agent solves the complex problem of translating multi-page documents while maintaining formatting fidelity. Phase 1 runs LLaMA 3 to extract document hierarchy, tables, headings, and linguistic structure. Phase 2 sequentially invokes Meta's NLLB-200 neural machine translation model. By implementing custom PyTorch memory deallocation between phases, memory consumption remains under 4 GB.",
+    tech: ["Python", "LLaMA 3", "NLLB-200", "HuggingFace", "PyMuPDF", "Ollama"],
+    github_url: "https://github.com",
+    demo_url: null,
+    video_url: null,
+    tech_sheet_url: "/omnitranslate-architecture.pdf",
+    custom_links: [],
+    image_path: null,
+    gallery: [],
+    sort_order: 2,
+    published: true,
+    views_count: 98
+  },
+  {
+    id: "d17e930f-56bb-49e0-8433-281b93fca103",
+    slug: "multiagent",
+    rank: 3,
+    title: "AI Multi-Agent Platform",
+    subtitle: "Professional Desktop Chat Application",
+    category: "desktop",
+    year: "2025–2026",
+    status: "Complete",
+    is_featured: true,
+    description: "A professional multi-agent chat platform with persistent conversation history, context memory using sliding window, and specialized AI bots.",
+    highlights: [
+      "Multi-agent architecture: general chat bot + developer/coding assistant",
+      "Persistent SQLite conversation history with sliding window context memory",
+      "Interactive sidebar with live stats, session archive & full OOP structure",
+      "Custom CSS UI built with Streamlit for a polished professional look"
+    ],
+    details: "A modular desktop assistant featuring decoupled agent personas. Supports dynamic prompt injection, sliding window conversation token management, and local SQLite session persistence. Built following strict Object-Oriented Design principles.",
+    tech: ["Python", "Streamlit", "Ollama", "SQLite", "LLaMA 3", "OOP"],
+    github_url: "https://github.com",
+    demo_url: null,
+    video_url: null,
+    tech_sheet_url: null,
+    custom_links: [],
+    image_path: null,
+    gallery: [],
+    sort_order: 3,
+    published: true,
+    views_count: 85
+  },
+  {
+    id: "a310c85b-1174-4b55-a13f-e902b7405230",
+    slug: "autonomous-robot",
+    rank: null,
+    title: "Autonomous Robot",
+    subtitle: "Embedded AI Integration",
+    category: "embedded",
+    year: "2024–2025",
+    status: "Complete",
+    is_featured: false,
+    description: "Arduino-based autonomous robot integrating motors, sensors, and AI-enhanced behavior via Python. Full circuit design and assembly.",
+    highlights: [
+      "Custom PCB and motor driver circuit design",
+      "Ultrasonic obstacle avoidance and PID speed control",
+      "Serial telemetry and remote Python control interface"
+    ],
+    details: "Combines mechatronics engineering and embedded programming. Custom chassis assembly, motor shield interfacing, and Python computer vision integration for autonomous path finding.",
+    tech: ["Arduino", "C / C++", "Python", "Circuit Design"],
+    github_url: "https://github.com",
+    demo_url: null,
+    video_url: null,
+    tech_sheet_url: null,
+    custom_links: [],
+    image_path: null,
+    gallery: [],
+    sort_order: 4,
+    published: true,
+    views_count: 67
+  },
+  {
+    id: "b4528d92-79cd-4cb1-9ef4-7589d985a711",
+    slug: "syndicate-management",
+    rank: null,
+    title: "Syndicate Management System",
+    subtitle: "Enterprise Web App",
+    category: "soon",
+    year: "2026",
+    status: "In Progress",
+    is_featured: false,
+    description: "Comprehensive syndicate management system being polished for release with role-based access control and member workflows.",
+    highlights: [
+      "Role-based authorization and membership subscription management",
+      "PostgreSQL audit logging and digital certificate issuance"
+    ],
+    details: "Enterprise-grade web system tailored for professional syndicates and engineering organizations.",
+    tech: ["Python", "Flask", "PostgreSQL", "Tailwind"],
+    github_url: null,
+    demo_url: null,
+    video_url: null,
+    tech_sheet_url: null,
+    custom_links: [],
+    image_path: null,
+    gallery: [],
+    sort_order: 5,
+    published: true,
+    views_count: 45
+  }
+];
