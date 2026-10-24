@@ -70,13 +70,13 @@ export default function Wires() {
 
       b.clearRect(0, 0, W, H);
       b.lineWidth = 1;
-      b.strokeStyle = 'rgba(0, 212, 255, 0.12)';
+      b.strokeStyle = 'rgba(255, 255, 255, 0.04)';
       paths.forEach(p => {
         b.beginPath();
         p.pts.forEach((q, i) => (i ? b.lineTo(q[0], q[1]) : b.moveTo(q[0], q[1])));
         b.stroke();
         b.beginPath();
-        b.arc(p.pts[3][0], p.pts[3][1], 2.2, 0, Math.PI * 2);
+        b.arc(p.pts[3][0], p.pts[3][1], 1.8, 0, Math.PI * 2);
         b.stroke();
       });
 
@@ -117,10 +117,10 @@ export default function Wires() {
       g.drawImage(base, 0, 0, W, H);
 
       g.lineCap = 'round';
-      g.strokeStyle = '#00d4ff';
+      g.strokeStyle = '#38bdf8';
 
-      // Soft glow passes
-      [[6, 0.08], [3, 0.22], [1.5, 0.9]].forEach(([w, a]) => {
+      // Soft architectural pulse passes
+      [[3, 0.03], [1.8, 0.08], [1, 0.35]].forEach(([w, a]) => {
         g.lineWidth = w;
         g.globalAlpha = a;
         paths.forEach(p => p.pulses.forEach(u => seg(p, u.s - 80, u.s)));

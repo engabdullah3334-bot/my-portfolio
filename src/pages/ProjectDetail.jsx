@@ -5,7 +5,6 @@ import { videoEmbed } from '../lib/video';
 import { FALLBACK_PROJECTS } from '../data/fallbackProjects';
 import TechBadge from '../components/common/TechBadge';
 import Wires from '../components/common/Wires';
-import CursorFollower from '../components/common/CursorFollower';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { CATEGORY_META } from '../components/projects/FeaturedCard';
@@ -76,7 +75,6 @@ export default function ProjectDetail() {
   return (
     <div className="relative min-h-screen bg-cyber-bg text-slate-100 flex flex-col">
       <Wires />
-      <CursorFollower />
       <Navbar />
 
       <main className="flex-1 max-w-5xl mx-auto w-full px-6 py-28 relative z-10 space-y-10">
@@ -84,14 +82,14 @@ export default function ProjectDetail() {
         {/* Loading state */}
         {project === undefined && (
           <div className="py-24 text-center space-y-4">
-            <div className="w-12 h-12 mx-auto rounded-full border-2 border-cyber-cyan border-t-transparent animate-spin" />
+            <div className="w-10 h-10 mx-auto rounded-full border-2 border-white/20 border-t-white animate-spin" />
             <p className="text-slate-400 font-mono text-xs">Loading case study telemetry...</p>
           </div>
         )}
 
         {/* 404 Not Found state */}
         {project === null && (
-          <div className="p-12 text-center rounded-3xl bg-cyber-card border border-cyber-border space-y-5 my-12">
+          <div className="p-12 text-center rounded-3xl bg-white/[0.02] border border-white/[0.08] space-y-5 my-12">
             <span className="text-5xl">🔍</span>
             <h2 className="text-2xl font-bold text-white">Project Case Study Not Found</h2>
             <p className="text-slate-400 text-sm max-w-md mx-auto">
@@ -99,7 +97,7 @@ export default function ProjectDetail() {
             </p>
             <Link
               to="/#projects"
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-semibold bg-cyber-cyan text-cyber-bg hover:opacity-90"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold bg-white text-zinc-950 hover:bg-slate-200"
             >
               &larr; Back to Selected Projects
             </Link>
@@ -111,10 +109,10 @@ export default function ProjectDetail() {
           <article className="space-y-10">
             
             {/* Breadcrumb & Navigation */}
-            <div className="flex items-center justify-between gap-4 flex-wrap pb-4 border-b border-cyber-border">
+            <div className="flex items-center justify-between gap-4 flex-wrap pb-4 border-b border-white/[0.08]">
               <Link
                 to="/#projects"
-                className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-400 hover:text-cyber-cyan transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-400 hover:text-white transition-colors"
               >
                 <span>&larr;</span>
                 <span>Back to All Works</span>
@@ -141,7 +139,7 @@ export default function ProjectDetail() {
                   {project.status || 'Complete'}
                 </span>
                 {project.rank != null && (
-                  <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold border border-cyber-cyan/40 bg-cyber-cyan/10 text-cyber-cyan">
+                  <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium border border-white/20 bg-white/[0.05] text-slate-200">
                     Featured #{project.rank}
                   </span>
                 )}
@@ -152,7 +150,7 @@ export default function ProjectDetail() {
               </h1>
 
               {project.subtitle && (
-                <p className="text-xl text-cyber-cyan font-mono font-medium">
+                <p className="text-xl text-sky-400 font-mono font-medium">
                   {project.subtitle}
                 </p>
               )}
@@ -168,7 +166,7 @@ export default function ProjectDetail() {
                     href={project.demo_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-cyber-cyan to-cyber-blue text-cyber-bg hover:opacity-95 hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-white text-zinc-950 hover:bg-slate-200 shadow-sm transition-all"
                   >
                     <span>Launch Live Demo</span>
                     <span>&nearr;</span>
@@ -179,7 +177,7 @@ export default function ProjectDetail() {
                     href={project.github_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-cyber-card border border-cyber-border text-slate-200 hover:border-cyber-cyan hover:text-white transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-white/[0.03] border border-white/[0.08] text-slate-200 hover:border-white/30 hover:text-white transition-all"
                   >
                     <span>Inspect Source Code</span>
                     <span>&nearr;</span>
@@ -190,7 +188,7 @@ export default function ProjectDetail() {
                     href={project.tech_sheet_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-cyber-card border border-cyber-purple/60 text-purple-300 hover:bg-cyber-purple/20 transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-white/[0.03] border border-white/[0.08] text-slate-200 hover:border-white/30 hover:text-white transition-all"
                   >
                     <span>Download Tech Sheet (PDF)</span>
                     <span>📄</span>
@@ -202,7 +200,7 @@ export default function ProjectDetail() {
                     href={lnk.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-cyber-card border border-cyber-cyan/40 text-slate-200 hover:border-cyber-cyan hover:text-cyber-cyan transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-white/[0.03] border border-white/[0.08] text-slate-200 hover:border-white/30 hover:text-white transition-all"
                   >
                     <span>{lnk.label}</span>
                     <span>🔗</span>
@@ -213,7 +211,7 @@ export default function ProjectDetail() {
 
             {/* Hero Cover Image (if available) */}
             {project.image_path && (
-              <div className="rounded-3xl overflow-hidden border border-cyber-border shadow-2xl bg-cyber-surface">
+              <div className="rounded-3xl overflow-hidden border border-white/[0.08] shadow-2xl bg-cyber-surface">
                 <img
                   src={imageUrl(project.image_path)}
                   alt={project.title}
@@ -224,11 +222,11 @@ export default function ProjectDetail() {
 
             {/* Embedded Video Demo (if available) */}
             {embedUrl && (
-              <div className="space-y-4 rounded-3xl bg-cyber-card/60 border border-cyber-border p-6 sm:p-8">
+              <div className="space-y-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] p-6 sm:p-8">
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
                   <span>🎬</span> Project Demonstration & Walkthrough
                 </h2>
-                <div className="relative aspect-video rounded-2xl overflow-hidden border border-cyber-border">
+                <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/[0.08]">
                   <iframe
                     src={embedUrl}
                     title={`${project.title} walkthrough video`}
@@ -244,14 +242,14 @@ export default function ProjectDetail() {
 
             {/* Architecture Highlights */}
             {project.highlights?.length > 0 && (
-              <div className="space-y-4 rounded-3xl bg-cyber-card/60 border border-cyber-border p-6 sm:p-8">
+              <div className="space-y-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] p-6 sm:p-8">
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
                   <span>⚡</span> Key Architectural Highlights
                 </h2>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {project.highlights.map((h, i) => (
-                    <li key={i} className="flex items-start gap-3 p-4 rounded-xl bg-cyber-surface border border-cyber-border/70 text-sm text-slate-300">
-                      <span className="text-cyber-cyan font-bold text-base mt-0.5">▸</span>
+                    <li key={i} className="flex items-start gap-3 p-4 rounded-xl bg-[#0c0e12] border border-white/[0.08] text-sm text-slate-300">
+                      <span className="text-sky-400 font-bold text-base mt-0.5">▸</span>
                       <span>{h}</span>
                     </li>
                   ))}
@@ -261,7 +259,7 @@ export default function ProjectDetail() {
 
             {/* Comprehensive Technical Details */}
             {project.details && (
-              <div className="space-y-4 rounded-3xl bg-cyber-card/60 border border-cyber-border p-6 sm:p-8">
+              <div className="space-y-4 rounded-3xl bg-white/[0.02] border border-white/[0.08] p-6 sm:p-8">
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
                   <span>🛠️</span> Engineering & Implementation Breakdown
                 </h2>
@@ -274,8 +272,8 @@ export default function ProjectDetail() {
             {/* Tech Stack Employed */}
             {project.tech?.length > 0 && (
               <div className="space-y-4">
-                <h2 className="text-lg font-bold text-white font-mono uppercase tracking-wider text-xs text-cyber-cyan">
-                  // Technologies & Frameworks Utilized
+                <h2 className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">
+                  Technologies & Frameworks Utilized
                 </h2>
                 <div className="flex flex-wrap gap-2.5">
                   {project.tech.map(t => (
@@ -287,7 +285,7 @@ export default function ProjectDetail() {
 
             {/* Gallery Images (Lightbox) */}
             {project.gallery?.length > 0 && (
-              <div className="space-y-4 pt-4 border-t border-cyber-border">
+              <div className="space-y-4 pt-4 border-t border-white/[0.08]">
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
                   <span>📸</span> Architectural Gallery & Schematics
                 </h2>
@@ -297,7 +295,7 @@ export default function ProjectDetail() {
                       key={i}
                       type="button"
                       onClick={() => setLightboxImg(imageUrl(imgName))}
-                      className="group relative aspect-video rounded-xl overflow-hidden border border-cyber-border bg-cyber-surface hover:border-cyber-cyan transition-all"
+                      className="group relative aspect-video rounded-xl overflow-hidden border border-white/[0.08] bg-[#0c0e12] hover:border-white/30 transition-all"
                     >
                       <img
                         src={imageUrl(imgName)}
@@ -305,7 +303,7 @@ export default function ProjectDetail() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-cyber-bg/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-xs font-mono text-cyber-cyan">
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-xs font-mono text-white">
                         Enlarge 🔍
                       </div>
                     </button>
@@ -318,7 +316,7 @@ export default function ProjectDetail() {
             <div className="pt-8">
               <Link
                 to="/#projects"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-cyber-surface border border-cyber-border text-slate-300 hover:border-cyber-cyan hover:text-white transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:border-white/30 hover:text-white transition-all"
               >
                 &larr; Return to All Projects
               </Link>
@@ -340,7 +338,7 @@ export default function ProjectDetail() {
           <img
             src={lightboxImg}
             alt="Expanded view"
-            className="max-w-[95vw] max-h-[90vh] rounded-2xl object-contain border border-cyber-cyan/50 shadow-[0_0_50px_rgba(0,212,255,0.3)]"
+            className="max-w-[95vw] max-h-[90vh] rounded-2xl object-contain border border-white/20 shadow-2xl"
           />
         </div>
       )}

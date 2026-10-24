@@ -51,10 +51,10 @@ export default function AdminLogin() {
 
   return (
     <div className="min-h-screen bg-cyber-bg flex items-center justify-center p-6 relative">
-      <div className="w-full max-w-md p-8 rounded-3xl bg-cyber-card border border-cyber-border shadow-2xl relative z-10 space-y-6">
+      <div className="w-full max-w-md p-8 rounded-3xl bg-[#0c0e12] border border-white/[0.08] shadow-2xl relative z-10 space-y-6">
         
         <div className="text-center space-y-2">
-          <div className="w-12 h-12 mx-auto rounded-xl bg-gradient-to-br from-cyber-cyan to-cyber-blue flex items-center justify-center text-cyber-bg font-black text-lg">
+          <div className="w-12 h-12 mx-auto rounded-xl bg-white text-zinc-950 flex items-center justify-center font-black text-lg shadow-sm">
             🔐
           </div>
           <h1 className="text-2xl font-black text-white">System Administration</h1>
@@ -80,7 +80,7 @@ export default function AdminLogin() {
               placeholder="admin@domain.com"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl bg-cyber-surface border border-cyber-border text-white text-sm focus:outline-none focus:border-cyber-cyan"
+              className="w-full px-4 py-3 rounded-xl bg-[#14171d] border border-white/[0.08] text-white text-sm focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-colors"
             />
           </div>
 
@@ -94,21 +94,21 @@ export default function AdminLogin() {
               placeholder="••••••••••••"
               value={password}
               onChange={e => setPassword(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl bg-cyber-surface border border-cyber-border text-white text-sm focus:outline-none focus:border-cyber-cyan"
+              className="w-full px-4 py-3 rounded-xl bg-[#14171d] border border-white/[0.08] text-white text-sm focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-colors"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3.5 rounded-xl font-bold text-sm tracking-wide bg-gradient-to-r from-cyber-cyan to-cyber-blue text-cyber-bg hover:opacity-95 disabled:opacity-50 transition-all cursor-pointer shadow-lg"
+            className="w-full py-3.5 rounded-xl font-bold text-sm tracking-wide bg-white text-zinc-950 hover:bg-slate-200 disabled:opacity-50 transition-all cursor-pointer shadow-sm"
           >
             {loading ? 'Authenticating...' : 'Sign In To Console'}
           </button>
         </form>
 
         <div className="text-center pt-2">
-          <Link to="/" className="text-xs text-slate-400 hover:text-cyber-cyan transition-colors">
+          <Link to="/" className="text-xs text-slate-400 hover:text-white transition-colors">
             &larr; Return to Portfolio Home
           </Link>
         </div>

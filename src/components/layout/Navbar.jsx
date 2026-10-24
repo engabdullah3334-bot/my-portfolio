@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useActiveSection } from '../../hooks/useActiveSection';
 import { useSiteSettings } from '../../hooks/useSiteSettings';
@@ -22,24 +22,24 @@ export default function Navbar() {
   const lastName = nameParts.slice(1).join(' ') || 'Adel';
 
   return (
-    <header className="fixed top-0 inset-x-0 z-40 bg-cyber-bg/85 backdrop-blur-md border-b border-cyber-border">
+    <header className="fixed top-0 inset-x-0 z-40 bg-cyber-bg/80 backdrop-blur-xl border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
 
         {/* Brand Logo */}
         <Link
           to="/"
-          className="flex items-center gap-2.5 font-bold tracking-tight text-white hover:text-cyber-cyan transition-colors"
+          className="flex items-center gap-2.5 font-bold tracking-tight text-white hover:text-slate-200 transition-colors"
         >
-          <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyber-cyan to-cyber-blue flex items-center justify-center text-cyber-bg font-black text-sm shadow-[0_0_12px_rgba(0,212,255,0.4)]">
+          <span className="w-8 h-8 rounded-lg bg-white text-zinc-950 flex items-center justify-center font-black text-xs shadow-sm">
             {firstName.charAt(0)}{lastName.charAt(0)}
           </span>
           <span className="text-base sm:text-lg font-black tracking-wider uppercase">
-            {firstName} <span className="text-cyber-cyan font-mono text-sm">.{lastName}</span>
+            {firstName} <span className="text-slate-400 font-mono text-xs">.{lastName}</span>
           </span>
         </Link>
 
         {/* Desktop Nav Items */}
-        <nav className="hidden md:flex items-center gap-1 bg-cyber-card/60 p-1 rounded-xl border border-cyber-border/70">
+        <nav className="hidden md:flex items-center gap-1 bg-zinc-900/70 p-1 rounded-full border border-white/[0.08]">
           {navLinks.map(link => {
             const href = isHomePage ? `#${link.id}` : `/#${link.id}`;
             const isActive = isHomePage && activeSection === link.id;
@@ -47,10 +47,10 @@ export default function Navbar() {
               <a
                 key={link.id}
                 href={href}
-                className={`px-4 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all duration-200 ${
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 ${
                   isActive
-                    ? 'bg-cyber-surface text-cyber-cyan border border-cyber-cyan/40 shadow-sm'
-                    : 'text-slate-400 hover:text-white hover:bg-cyber-surface/50'
+                    ? 'bg-white text-zinc-950 shadow-sm'
+                    : 'text-slate-400 hover:text-white hover:bg-white/[0.06]'
                 }`}
               >
                 {link.label}
@@ -63,14 +63,14 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href={`mailto:${settings.email || 'engabdullah3334@gmail.com'}`}
-            className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-cyber-cyan to-cyber-blue text-cyber-bg hover:opacity-95 hover:shadow-[0_0_16px_rgba(0,212,255,0.35)] transition-all"
+            className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full text-xs font-semibold bg-white text-zinc-950 hover:bg-slate-200 transition-all shadow-sm"
           >
             {settings.nav_cta_label || 'Get In Touch'}
           </a>
           <button
             type="button"
             onClick={() => setMobileMenuOpen(prev => !prev)}
-            className="md:hidden w-10 h-10 rounded-xl flex items-center justify-center bg-cyber-card border border-cyber-border text-slate-300 hover:text-white focus:outline-none"
+            className="md:hidden w-10 h-10 rounded-xl flex items-center justify-center bg-cyber-card border border-white/[0.08] text-slate-300 hover:text-white focus:outline-none"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -87,13 +87,13 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-cyber-border bg-cyber-bg/95 backdrop-blur-xl px-6 py-5 space-y-3">
+        <div className="md:hidden border-b border-white/[0.08] bg-[#08090b]/95 backdrop-blur-xl px-6 py-5 space-y-3">
           {navLinks.map(link => (
             <a
               key={link.id}
               href={isHomePage ? `#${link.id}` : `/#${link.id}`}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-cyber-cyan hover:bg-cyber-card transition-colors"
+              className="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/[0.04] transition-colors"
             >
               {link.label}
             </a>
@@ -101,7 +101,7 @@ export default function Navbar() {
           <a
             href={`mailto:${settings.email || 'engabdullah3334@gmail.com'}`}
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-center py-2.5 rounded-xl text-sm font-semibold bg-cyber-cyan text-cyber-bg mt-2"
+            className="block text-center py-2.5 rounded-xl text-sm font-bold bg-white text-zinc-950 mt-2 shadow-sm"
           >
             {settings.nav_cta_label || 'Get In Touch'} ({settings.email || 'engabdullah3334@gmail.com'})
           </a>

@@ -1,7 +1,6 @@
 import { useProjects } from '../hooks/useProjects';
 import { useSiteSettings } from '../hooks/useSiteSettings';
 import Wires from '../components/common/Wires';
-import CursorFollower from '../components/common/CursorFollower';
 import Marquee from '../components/common/Marquee';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
@@ -28,7 +27,6 @@ export default function Home() {
     <div className="relative min-h-screen bg-cyber-bg text-slate-100 flex flex-col">
       {/* Background Ambience & Canvas */}
       <Wires />
-      <CursorFollower />
 
       {/* Main Header / Navigation */}
       <Navbar />

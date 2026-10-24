@@ -31,7 +31,7 @@ export default function ProjectCarousel({ projects = [] }) {
 
   return (
     <div
-      className="relative rounded-3xl overflow-hidden bg-cyber-card/80 border border-cyber-border shadow-2xl p-6 sm:p-10 transition-all"
+      className="relative rounded-3xl overflow-hidden bg-cyber-card/60 border border-white/[0.08] shadow-2xl p-6 sm:p-10 transition-all"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onPointerDown={e => { x0.current = e.clientX; }}
@@ -43,12 +43,12 @@ export default function ProjectCarousel({ projects = [] }) {
       }}
     >
       {/* Top category bar */}
-      <div className={`absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r ${cat.bar}`} />
+      <div className={`absolute top-0 inset-x-0 h-1 bg-gradient-to-r ${cat.bar}`} />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
         {/* Left Side: Media / Visual representation */}
-        <div className="lg:col-span-5 relative rounded-2xl overflow-hidden bg-cyber-surface border border-cyber-border/80 min-h-[260px] sm:min-h-[320px] flex items-center justify-center group">
+        <div className="lg:col-span-5 relative rounded-2xl overflow-hidden bg-cyber-surface border border-white/[0.08] min-h-[260px] sm:min-h-[320px] flex items-center justify-center group">
           {current.image_path ? (
             <img
               src={imageUrl(current.image_path)}
@@ -59,14 +59,14 @@ export default function ProjectCarousel({ projects = [] }) {
           ) : (
             <div className="flex flex-col items-center justify-center p-8 text-center space-y-3">
               <span className="text-5xl">{cat.icon}</span>
-              <p className="text-cyber-cyan font-mono text-sm tracking-widest uppercase">
+              <p className="text-slate-400 font-mono text-sm tracking-widest uppercase">
                 {current.category}
               </p>
-              <div className="w-16 h-1 rounded-full bg-cyber-cyan/30" />
+              <div className="w-16 h-1 rounded-full bg-white/20" />
             </div>
           )}
           {current.rank != null && (
-            <div className="absolute top-4 left-4 bg-cyber-bg/90 border border-cyber-cyan/50 text-cyber-cyan font-bold text-xs px-3 py-1.5 rounded-xl shadow-lg backdrop-blur-md">
+            <div className="absolute top-4 left-4 bg-zinc-900/90 border border-white/10 text-white font-bold text-xs px-3 py-1.5 rounded-xl shadow-lg backdrop-blur-md">
               Rank #{current.rank}
             </div>
           )}
@@ -89,12 +89,12 @@ export default function ProjectCarousel({ projects = [] }) {
               </div>
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-black text-white hover:text-cyber-cyan transition-colors">
+            <h3 className="text-2xl sm:text-3xl font-black text-white hover:text-sky-300 transition-colors">
               <Link to={projectLink}>{current.title}</Link>
             </h3>
 
             {current.subtitle && (
-              <p className="text-cyber-cyan font-mono text-xs sm:text-sm">
+              <p className="text-sky-400 font-mono text-xs sm:text-sm">
                 {current.subtitle}
               </p>
             )}
@@ -109,7 +109,7 @@ export default function ProjectCarousel({ projects = [] }) {
             <ul className="space-y-1.5">
               {current.highlights.slice(0, 3).map((h, i) => (
                 <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                  <span className="text-cyber-cyan font-bold mt-0.5">▸</span>
+                  <span className="text-sky-400 font-bold mt-0.5">▸</span>
                   <span>{h}</span>
                 </li>
               ))}
@@ -124,11 +124,11 @@ export default function ProjectCarousel({ projects = [] }) {
           </div>
 
           {/* Navigation Controls & Action Buttons */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-cyber-border/70">
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/[0.08]">
             <div className="flex items-center gap-3">
               <Link
                 to={projectLink}
-                className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-cyber-cyan to-cyber-blue text-cyber-bg hover:opacity-95 hover:shadow-[0_0_16px_rgba(0,212,255,0.35)] transition-all"
+                className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-zinc-950 hover:bg-slate-200 shadow-sm transition-all"
               >
                 Case Study &rarr;
               </Link>
@@ -137,7 +137,7 @@ export default function ProjectCarousel({ projects = [] }) {
                   href={current.demo_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium border border-cyber-cyan/40 text-cyber-cyan hover:bg-cyber-glow transition-all"
+                  className="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium border border-white/20 bg-white/[0.04] text-white hover:bg-white/[0.08] transition-all"
                 >
                   Live Demo
                 </a>
@@ -147,7 +147,7 @@ export default function ProjectCarousel({ projects = [] }) {
                   href={current.github_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium border border-cyber-border text-slate-300 hover:border-cyber-cyan hover:text-white transition-all"
+                  className="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium border border-white/[0.08] text-slate-300 hover:border-white/30 hover:text-white transition-all"
                 >
                   Code
                 </a>
@@ -158,7 +158,7 @@ export default function ProjectCarousel({ projects = [] }) {
                   href={lnk.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium border border-cyber-cyan/30 text-slate-200 hover:border-cyber-cyan hover:text-cyber-cyan transition-all"
+                  className="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium border border-white/[0.08] text-slate-300 hover:border-white/30 hover:text-white transition-all"
                 >
                   {lnk.label}
                 </a>
@@ -171,7 +171,7 @@ export default function ProjectCarousel({ projects = [] }) {
                 <button
                   type="button"
                   onClick={() => go(-1)}
-                  className="w-9 h-9 rounded-xl flex items-center justify-center bg-cyber-surface border border-cyber-border text-slate-400 hover:border-cyber-cyan hover:text-cyber-cyan transition-all"
+                  className="w-9 h-9 rounded-xl flex items-center justify-center bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:border-white/30 hover:text-white transition-all"
                   aria-label="Previous Project"
                 >
                   &#8592;
@@ -183,8 +183,8 @@ export default function ProjectCarousel({ projects = [] }) {
                       key={p.id || i}
                       type="button"
                       onClick={() => setIdx(i)}
-                      className={`h-2 rounded-full transition-all duration-300 ${
-                        i === idx ? 'w-8 bg-cyber-cyan shadow-[0_0_8px_#00d4ff]' : 'w-2 bg-cyber-border hover:bg-slate-500'
+                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                        i === idx ? 'w-8 bg-white' : 'w-2 bg-white/20 hover:bg-white/40'
                       }`}
                       aria-label={`Go to slide ${i + 1}`}
                     />
@@ -194,7 +194,7 @@ export default function ProjectCarousel({ projects = [] }) {
                 <button
                   type="button"
                   onClick={() => go(1)}
-                  className="w-9 h-9 rounded-xl flex items-center justify-center bg-cyber-surface border border-cyber-border text-slate-400 hover:border-cyber-cyan hover:text-cyber-cyan transition-all"
+                  className="w-9 h-9 rounded-xl flex items-center justify-center bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:border-white/30 hover:text-white transition-all"
                   aria-label="Next Project"
                 >
                   &#8594;

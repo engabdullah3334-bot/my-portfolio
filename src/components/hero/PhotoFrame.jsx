@@ -2,52 +2,42 @@ import React from 'react';
 import profileImg from '../../assets/profile.png';
 
 /**
- * Cyberpunk photo frame with orbital rotation rings, corner brackets,
- * animated glow, scanlines overlay, and holographic floating badges.
+ * Clean, architectural portrait frame:
+ * Refined neutral obsidian container with hairline glass border,
+ * soft ambient backlight, and minimalist identity pill.
  */
 export default function PhotoFrame() {
   return (
-    <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 animate-float select-none">
-      {/* Outer rotating cyber rings */}
-      <div className="absolute -inset-4 rounded-full border border-cyber-cyan/20 animate-spin-slow pointer-events-none" />
-      <div
-        className="absolute -inset-8 rounded-full border border-cyber-blue/15 animate-spin-slow pointer-events-none"
-        style={{ animationDirection: 'reverse', animationDuration: '24s' }}
-      />
+    <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 select-none group">
+      {/* Soft ambient backlight */}
+      <div className="absolute -inset-2 rounded-[2.2rem] bg-gradient-to-b from-white/[0.08] via-sky-500/[0.04] to-transparent blur-xl pointer-events-none" />
 
-      {/* Cyberpunk corner bracket accents */}
-      <div className="absolute -top-2.5 -left-2.5 w-8 h-8 border-t-2 border-l-2 border-cyber-cyan rounded-tl-lg pointer-events-none z-20" />
-      <div className="absolute -top-2.5 -right-2.5 w-8 h-8 border-t-2 border-r-2 border-cyber-cyan rounded-tr-lg pointer-events-none z-20" />
-      <div className="absolute -bottom-2.5 -left-2.5 w-8 h-8 border-b-2 border-l-2 border-cyber-cyan rounded-bl-lg pointer-events-none z-20" />
-      <div className="absolute -bottom-2.5 -right-2.5 w-8 h-8 border-b-2 border-r-2 border-cyber-cyan rounded-br-lg pointer-events-none z-20" />
+      {/* Outer precision frame with hairline gradient border */}
+      <div className="relative w-full h-full rounded-[2rem] p-1.5 bg-gradient-to-b from-white/[0.12] via-white/[0.04] to-white/[0.02] border border-white/[0.08] shadow-2xl">
+        
+        {/* Main image container */}
+        <div className="relative w-full h-full rounded-[1.65rem] overflow-hidden bg-cyber-surface">
+          <img
+            src={profileImg}
+            alt="Abdullah Adel — Mechatronics & AI Engineer"
+            className="w-full h-full object-cover object-center filter contrast-[1.02] group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+          />
 
-      {/* Neon border glow ring */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyber-cyan/20 via-cyber-blue/15 to-cyber-purple/20 animate-border-glow pointer-events-none" />
-
-      {/* Main photo container */}
-      <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-cyber-cyan/35 shadow-[0_0_50px_rgba(0,212,255,0.22)] bg-cyber-surface">
-        <img
-          src={profileImg}
-          alt="Abdullah Adel — Mechatronics & AI Engineer"
-          className="w-full h-full object-cover object-center filter contrast-105"
-        />
-
-        {/* Scanline CRT overlay */}
-        <div className="absolute inset-0 pointer-events-none opacity-15 scanlines-overlay" />
-
-        {/* Bottom identity tag */}
-        <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-cyber-bg via-cyber-bg/75 to-transparent py-4 px-5 z-10">
-          <p className="text-white font-bold text-sm tracking-wide">Abdullah Adel</p>
-          <p className="text-cyber-cyan font-mono text-xs tracking-wider">Mechatronics · AI · Robotics</p>
+          {/* Elegant bottom identity vignette */}
+          <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-5 pt-10 z-10 flex flex-col justify-end">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <p className="text-white font-bold text-sm tracking-wide">Abdullah Adel</p>
+            </div>
+            <p className="text-slate-400 text-xs mt-0.5 font-medium">Mechatronics · AI · Robotics</p>
+          </div>
         </div>
       </div>
 
-      {/* Floating holographic badges */}
-      <div className="absolute -top-3.5 -right-4 bg-cyber-card/95 border border-cyber-cyan/50 backdrop-blur-md rounded-xl px-3.5 py-1.5 text-xs font-mono text-cyber-cyan shadow-[0_0_20px_rgba(0,212,255,0.25)] whitespace-nowrap z-20">
-        &lt;AI Engineer /&gt;
-      </div>
-      <div className="absolute -bottom-3.5 -left-4 bg-cyber-card/95 border border-cyber-purple/50 backdrop-blur-md rounded-xl px-3.5 py-1.5 text-xs font-mono text-purple-300 shadow-[0_0_20px_rgba(139,92,246,0.25)] whitespace-nowrap z-20">
-        &#123; Python · C++ · Robotics &#125;
+      {/* Minimalist Floating Engineering Pill */}
+      <div className="absolute -top-3 -right-2 bg-cyber-card/95 border border-white/10 backdrop-blur-md rounded-full px-3.5 py-1 text-[11px] font-mono text-slate-200 shadow-lg whitespace-nowrap z-20 flex items-center gap-1.5">
+        <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+        <span>Mechatronics &amp; AI</span>
       </div>
     </div>
   );

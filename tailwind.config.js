@@ -13,16 +13,16 @@ export default {
       },
       colors: {
         cyber: {
-          bg:      '#0a0e1a',
-          surface: '#0f1629',
-          card:    '#131d35',
-          border:  '#1e2d4d',
-          cyan:    '#00d4ff',
-          teal:    '#00b4a0',
-          blue:    '#3b82f6',
-          purple:  '#8b5cf6',
+          bg:      '#08090b',
+          surface: '#0f1115',
+          card:    '#14171d',
+          border:  '#20242c',
+          cyan:    '#38bdf8',
+          teal:    '#0ea5e9',
+          blue:    '#2563eb',
+          purple:  '#94a3b8',
           emerald: '#10b981',
-          glow:    'rgba(0, 212, 255, 0.15)',
+          glow:    'rgba(56, 189, 248, 0.08)',
         },
       },
       animation: {
@@ -45,12 +45,12 @@ export default {
           to:   { opacity: '1', transform: 'translateX(0)' },
         },
         borderGlow: {
-          from: { boxShadow: '0 0 10px rgba(0,212,255,0.25), 0 0 20px rgba(0,212,255,0.08)' },
-          to:   { boxShadow: '0 0 25px rgba(0,212,255,0.55), 0 0 45px rgba(0,212,255,0.25)' },
+          from: { boxShadow: '0 0 10px rgba(56,189,248,0.08)' },
+          to:   { boxShadow: '0 0 20px rgba(56,189,248,0.18)' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%':      { transform: 'translateY(-10px)' },
+          '50%':      { transform: 'translateY(-6px)' },
         },
         typewriter: {
           from: { width: '0' },
@@ -58,15 +58,15 @@ export default {
         },
         blink: {
           '0%, 100%': { borderColor: 'transparent' },
-          '50%':      { borderColor: '#00d4ff' },
+          '50%':      { borderColor: '#38bdf8' },
         },
       },
       backgroundImage: {
-        'grid-pattern': `linear-gradient(rgba(0,212,255,0.035) 1px, transparent 1px),
-                         linear-gradient(90deg, rgba(0,212,255,0.035) 1px, transparent 1px)`,
+        'grid-pattern': `linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)`,
       },
       backgroundSize: {
-        'grid': '40px 40px',
+        'grid': '48px 48px',
       },
     },
   },

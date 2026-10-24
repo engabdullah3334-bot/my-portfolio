@@ -34,7 +34,7 @@ export default function Marquee({ items = [] }) {
   const list = [...items, ...items, ...items];
 
   return (
-    <div className="overflow-hidden border-y border-cyber-border/80 bg-cyber-surface/40 py-4 backdrop-blur-sm select-none" aria-hidden="true">
+    <div className="overflow-hidden border-y border-white/[0.08] bg-cyber-surface/30 py-4 backdrop-blur-sm select-none" aria-hidden="true">
       <div
         ref={marqRef}
         className="flex w-max will-change-transform transition-transform duration-75 ease-out"
@@ -42,10 +42,10 @@ export default function Marquee({ items = [] }) {
         {list.map((item, idx) => (
           <span
             key={idx}
-            className="flex items-center gap-6 px-8 text-xl lg:text-2xl font-bold tracking-wider uppercase font-mono text-slate-400 hover:text-cyber-cyan transition-colors"
+            className="flex items-center gap-6 px-8 text-xl lg:text-2xl font-bold tracking-wider uppercase font-mono text-slate-500 hover:text-slate-200 transition-colors"
           >
             <span>{item}</span>
-            <span className="text-cyber-cyan text-sm">✦</span>
+            <span className="text-sky-400/60 text-xs">✦</span>
           </span>
         ))}
       </div>

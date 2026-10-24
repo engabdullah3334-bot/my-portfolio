@@ -1,16 +1,16 @@
 import React from 'react';
 import TechBadge from '../common/TechBadge';
 
-export default function SkillGroup({ category, accent = '#00d4ff', skills = [] }) {
+export default function SkillGroup({ category, accent = '#38bdf8', skills = [] }) {
   return (
-    <div className="flex flex-col gap-3.5 p-5 rounded-2xl bg-cyber-card/50 border border-cyber-border hover:border-cyber-cyan/40 transition-all duration-300 shadow-sm">
+    <div className="flex flex-col gap-3.5 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 transition-all duration-300 shadow-sm">
       <div className="flex items-center gap-2.5">
         <div
-          className="w-2.5 h-2.5 rounded-full"
-          style={{ background: accent, boxShadow: `0 0 8px ${accent}` }}
+          className="w-2 h-2 rounded-full"
+          style={{ background: accent }}
         />
         <span
-          className="text-xs font-mono font-bold tracking-widest uppercase"
+          className="text-xs font-mono font-semibold tracking-wider uppercase"
           style={{ color: accent }}
         >
           {category}

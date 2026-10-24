@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import TypingBadge from './TypingBadge';
 import PhotoFrame from './PhotoFrame';
-import Particles from '../common/Particles';
 import Count from '../common/Count';
 import TechBadge from '../common/TechBadge';
 import { useDownloadAnalytics } from '../../hooks/useDownloadAnalytics';
@@ -9,8 +8,8 @@ import { useSiteSettings } from '../../hooks/useSiteSettings';
 
 function StatCard({ value, label, countTo = null }) {
   return (
-    <div className="flex flex-col items-center px-4 py-3 sm:px-5 sm:py-3.5 rounded-xl bg-cyber-card/70 border border-cyber-border hover:border-cyber-cyan/50 hover:bg-cyber-card transition-all duration-300 shadow-sm">
-      <span className="text-xl sm:text-2xl font-bold text-cyber-cyan">
+    <div className="flex flex-col items-center px-4 py-3 sm:px-5 sm:py-3.5 rounded-2xl bg-cyber-card/60 border border-white/[0.08] hover:border-white/20 hover:bg-cyber-card transition-all duration-200 shadow-sm">
+      <span className="text-xl sm:text-2xl font-black text-white">
         {countTo ? <Count to={countTo} /> : value}
       </span>
       <span className="text-[11px] sm:text-xs text-slate-400 mt-0.5 whitespace-nowrap">{label}</span>
@@ -26,7 +25,7 @@ function SocialLink({ href, label, icon }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="w-10 h-10 rounded-full flex items-center justify-center bg-cyber-card border border-cyber-border text-slate-400 hover:border-cyber-cyan hover:text-cyber-cyan hover:bg-cyber-glow hover:scale-110 active:scale-95 transition-all duration-300 shadow-sm"
+      className="w-10 h-10 rounded-xl flex items-center justify-center bg-cyber-card border border-white/[0.08] text-slate-400 hover:border-white/20 hover:text-white hover:bg-cyber-surface active:scale-95 transition-all duration-200 shadow-sm"
     >
       {icon}
     </a>
@@ -65,15 +64,11 @@ export default function HeroSection() {
       ref={heroRef}
       className="relative min-h-[92vh] flex items-center overflow-hidden bg-cyber-bg pt-24 pb-16 lg:py-28"
     >
-      {/* Background ambient radial glows */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 rounded-full bg-cyber-blue/10 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 rounded-full bg-cyber-purple/10 blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] rounded-full bg-cyber-cyan/5 blur-3xl pointer-events-none" />
+      {/* Subtle architectural ambient lighting */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-white/[0.03] to-transparent rounded-full blur-3xl pointer-events-none" />
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-35 pointer-events-none" />
-
-      <Particles count={26} />
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-25 pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-16">
@@ -86,11 +81,11 @@ export default function HeroSection() {
           >
             {/* Status & Location Pill */}
             <div className="flex flex-wrap items-center gap-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyber-card border border-cyber-border text-xs sm:text-sm text-slate-300">
-                <span className={`w-2 h-2 rounded-full ${settings.is_available ? 'bg-emerald-400 animate-pulse' : 'bg-slate-500'}`} />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyber-card border border-white/[0.08] text-xs sm:text-sm text-slate-300 shadow-sm">
+                <span className={`w-2 h-2 rounded-full ${settings.is_available ? 'bg-emerald-400 ring-4 ring-emerald-500/20' : 'bg-slate-500'}`} />
                 {settings.availability_status || 'Available for opportunities'}
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-cyber-card border border-cyber-border text-xs sm:text-sm text-slate-400">
+              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-cyber-card border border-white/[0.08] text-xs sm:text-sm text-slate-400">
                 <span>📍</span>
                 {settings.location || 'Cairo, Egypt'}
               </div>
@@ -98,13 +93,12 @@ export default function HeroSection() {
 
             {/* Main Greeting & Name */}
             <div className="space-y-1">
-              <p className="text-cyber-cyan font-mono text-xs sm:text-sm tracking-widest uppercase">
+              <p className="text-sky-400 font-mono text-xs sm:text-sm tracking-widest uppercase">
                 &lt;{settings.tagline || 'intelligent systems & robotics'} /&gt;
               </p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.08]">
-                {firstName}
-                <br />
-                <span className="bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-purple bg-clip-text text-transparent">
+                {firstName}{' '}
+                <span className="bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
                   {lastName}
                 </span>
               </h1>
@@ -123,14 +117,14 @@ export default function HeroSection() {
 
             {/* Quick credentials */}
             <div className="flex flex-wrap gap-4 text-xs sm:text-sm text-slate-400">
-              <a href={`mailto:${settings.email}`} className="inline-flex items-center gap-1.5 hover:text-cyber-cyan transition-colors">
-                <span className="text-cyber-cyan">✉️</span> {settings.email}
+              <a href={`mailto:${settings.email}`} className="inline-flex items-center gap-1.5 hover:text-white transition-colors">
+                <span className="text-sky-400">✉️</span> {settings.email}
               </a>
-              <a href={`tel:${settings.phone}`} className="inline-flex items-center gap-1.5 hover:text-cyber-cyan transition-colors" dir="ltr">
-                <span className="text-cyber-cyan">📞</span> {settings.phone}
+              <a href={`tel:${settings.phone}`} className="inline-flex items-center gap-1.5 hover:text-white transition-colors" dir="ltr">
+                <span className="text-sky-400">📞</span> {settings.phone}
               </a>
               <span className="inline-flex items-center gap-1.5">
-                <span className="text-cyber-cyan">🎓</span> {settings.education?.university || 'Helwan National University'}
+                <span className="text-sky-400">🎓</span> {settings.education?.university || 'Helwan National University'}
               </span>
             </div>
 
@@ -157,7 +151,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-3.5 pt-2">
               <a
                 href="#projects"
-                className="px-7 py-3 rounded-xl font-semibold text-sm tracking-wide bg-gradient-to-r from-cyber-cyan to-cyber-blue text-cyber-bg hover:opacity-95 hover:scale-105 hover:shadow-[0_0_24px_rgba(0,212,255,0.4)] active:scale-95 transition-all duration-300"
+                className="px-7 py-3 rounded-xl font-semibold text-sm tracking-wide bg-white text-zinc-950 hover:bg-slate-200 hover:shadow-lg hover:shadow-white/5 active:scale-95 transition-all duration-200"
               >
                 Explore Projects 🚀
               </a>
@@ -167,15 +161,15 @@ export default function HeroSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={trackDownload}
-                className={`relative px-7 py-3 rounded-xl font-semibold text-sm tracking-wide border transition-all duration-300 ${
+                className={`relative px-7 py-3 rounded-xl font-semibold text-sm tracking-wide border transition-all duration-200 ${
                   justDownloaded
                     ? 'border-emerald-400 bg-emerald-500/10 text-emerald-400'
-                    : 'border-cyber-cyan/80 bg-cyber-card/60 text-cyber-cyan hover:bg-cyber-glow hover:border-cyber-cyan hover:scale-105 hover:shadow-[0_0_20px_rgba(0,212,255,0.25)]'
+                    : 'border-white/10 bg-cyber-card/80 text-slate-200 hover:border-white/20 hover:bg-cyber-card hover:text-white'
                 }`}
               >
                 {justDownloaded ? 'Downloaded! 🎉' : 'Download CV 📄'}
                 {downloadCount > 0 && (
-                  <span className="absolute -top-2.5 -right-2 bg-cyber-bg border border-cyber-cyan text-cyber-cyan text-[10px] font-mono px-2 py-0.5 rounded-full shadow-md">
+                  <span className="absolute -top-2.5 -right-2 bg-cyber-bg border border-sky-400 text-sky-400 text-[10px] font-mono px-2 py-0.5 rounded-full shadow-md">
                     {downloadCount}
                   </span>
                 )}
@@ -183,7 +177,7 @@ export default function HeroSection() {
 
               <a
                 href="#contact"
-                className="px-6 py-3 rounded-xl font-semibold text-sm tracking-wide border border-slate-700 bg-cyber-card/40 text-slate-300 hover:border-slate-400 hover:text-white hover:scale-105 active:scale-95 transition-all duration-300"
+                className="px-6 py-3 rounded-xl font-semibold text-sm tracking-wide border border-white/10 bg-cyber-card/40 text-slate-300 hover:border-white/20 hover:text-white active:scale-95 transition-all duration-200"
               >
                 Contact Me ✉️
               </a>

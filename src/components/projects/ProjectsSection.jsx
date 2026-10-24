@@ -36,22 +36,18 @@ export default function ProjectsSection({ projects = [] }) {
   const others = filtered.filter(p => !p.is_featured && (p.rank == null || p.rank > 3));
 
   return (
-    <section id="projects" className="relative py-24 bg-cyber-bg overflow-hidden border-t border-cyber-border">
-      {/* Background neon glows */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-cyber-blue/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyber-purple/5 rounded-full blur-3xl pointer-events-none" />
-
+    <section id="projects" className="relative py-24 bg-cyber-bg overflow-hidden border-t border-white/[0.06]">
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
         
         {/* Section Header with Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2">
-            <p className="text-cyber-cyan font-mono text-xs sm:text-sm tracking-widest uppercase">
+            <p className="text-sky-400 font-mono text-xs sm:text-sm tracking-widest uppercase">
               // portfolio showcase
             </p>
             <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight">
               Selected{' '}
-              <span className="bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-purple bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
                 Works
               </span>
             </h2>
@@ -72,16 +68,16 @@ export default function ProjectsSection({ projects = [] }) {
                 key={f.id}
                 type="button"
                 onClick={() => setActiveFilter(f.id)}
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-300 ${
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 ${
                   activeFilter === f.id
-                    ? 'bg-gradient-to-r from-cyber-cyan to-cyber-blue text-cyber-bg shadow-[0_0_16px_rgba(0,212,255,0.35)]'
-                    : 'bg-cyber-card/70 border border-cyber-border text-slate-400 hover:border-cyber-cyan/50 hover:text-white'
+                    ? 'bg-white text-zinc-950 shadow-sm'
+                    : 'bg-cyber-card/80 border border-white/[0.08] text-slate-400 hover:border-white/20 hover:text-white'
                 }`}
               >
                 <span>{f.label}</span>
                 <span
                   className={`text-[10px] px-1.5 py-0.5 rounded-full ${
-                    activeFilter === f.id ? 'bg-cyber-bg/30 text-cyber-bg font-bold' : 'bg-cyber-border text-slate-400'
+                    activeFilter === f.id ? 'bg-zinc-200 text-zinc-900 font-bold' : 'bg-white/[0.06] text-slate-400'
                   }`}
                 >
                   {f.count}
@@ -101,8 +97,8 @@ export default function ProjectsSection({ projects = [] }) {
             {featured.length > 0 && (
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <span className="text-cyber-cyan font-mono text-xs tracking-widest uppercase">// Core Systems</span>
-                  <div className="h-px flex-1 bg-cyber-border" />
+                  <span className="text-sky-400 font-mono text-xs tracking-wider uppercase font-semibold">Core Engineering</span>
+                  <div className="h-px flex-1 bg-white/[0.08]" />
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {featured.map((project, idx) => (
@@ -116,8 +112,8 @@ export default function ProjectsSection({ projects = [] }) {
             {others.length > 0 && (
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <span className="text-slate-400 font-mono text-xs tracking-widest uppercase">// Additional Initiatives</span>
-                  <div className="h-px flex-1 bg-cyber-border" />
+                  <span className="text-slate-400 font-mono text-xs tracking-wider uppercase font-semibold">Additional Works</span>
+                  <div className="h-px flex-1 bg-white/[0.08]" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {others.map((project, idx) => (

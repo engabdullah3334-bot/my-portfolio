@@ -47,22 +47,19 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-cyber-surface/70 border-t border-cyber-border overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-cyber-cyan/5 rounded-full blur-3xl pointer-events-none" />
-
+    <section id="contact" className="relative py-24 bg-cyber-surface/40 border-t border-white/[0.08] overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
           {/* Left Column: Contact Info & Value Prop */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-2">
-              <p className="text-cyber-cyan font-mono text-xs sm:text-sm tracking-widest uppercase">
-                // communication channel
+              <p className="text-sky-400 font-mono text-xs tracking-wider uppercase font-semibold">
+                Get in Touch
               </p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
                 {(settings.contact_headline || 'Have a challenge worth solving?').split(' ').slice(0, -2).join(' ')}{' '}
-                <span className="bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-purple bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
                   {(settings.contact_headline || 'Have a challenge worth solving?').split(' ').slice(-2).join(' ')}
                 </span>
               </h2>
@@ -75,28 +72,28 @@ export default function ContactSection() {
             <div className="space-y-3 pt-2">
               <a
                 href={`mailto:${email}`}
-                className="flex items-center justify-between p-4 rounded-xl bg-cyber-card/80 border border-cyber-border hover:border-cyber-cyan hover:bg-cyber-card transition-all group"
+                className="flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 hover:bg-white/[0.04] transition-all group"
               >
                 <div>
                   <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">Direct Email</span>
-                  <span className="text-sm sm:text-base font-semibold text-white group-hover:text-cyber-cyan transition-colors">
+                  <span className="text-sm sm:text-base font-semibold text-white group-hover:text-sky-300 transition-colors">
                     {email}
                   </span>
                 </div>
-                <span className="text-cyber-cyan group-hover:translate-x-1 transition-transform">&rarr;</span>
+                <span className="text-slate-400 group-hover:text-white group-hover:translate-x-1 transition-all">&rarr;</span>
               </a>
 
               <a
                 href={`tel:${phone}`}
-                className="flex items-center justify-between p-4 rounded-xl bg-cyber-card/80 border border-cyber-border hover:border-cyber-cyan hover:bg-cyber-card transition-all group"
+                className="flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 hover:bg-white/[0.04] transition-all group"
               >
                 <div>
                   <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">Phone & WhatsApp</span>
-                  <span className="text-sm sm:text-base font-semibold text-white group-hover:text-cyber-cyan transition-colors" dir="ltr">
+                  <span className="text-sm sm:text-base font-semibold text-white group-hover:text-sky-300 transition-colors" dir="ltr">
                     {phone}
                   </span>
                 </div>
-                <span className="text-cyber-cyan group-hover:translate-x-1 transition-transform">&rarr;</span>
+                <span className="text-slate-400 group-hover:text-white group-hover:translate-x-1 transition-all">&rarr;</span>
               </a>
 
               <div className="grid grid-cols-2 gap-3 pt-1">
@@ -105,7 +102,7 @@ export default function ContactSection() {
                     href={github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 p-3.5 rounded-xl bg-cyber-card border border-cyber-border hover:border-cyber-cyan text-slate-300 hover:text-white transition-all text-xs sm:text-sm font-medium"
+                    className="flex items-center gap-2.5 p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 text-slate-300 hover:text-white transition-all text-xs sm:text-sm font-medium"
                   >
                     <span>🐙 GitHub</span>
                     <span className="ml-auto text-slate-500">&nearr;</span>
@@ -116,7 +113,7 @@ export default function ContactSection() {
                     href={linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 p-3.5 rounded-xl bg-cyber-card border border-cyber-border hover:border-cyber-cyan text-slate-300 hover:text-white transition-all text-xs sm:text-sm font-medium"
+                    className="flex items-center gap-2.5 p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 text-slate-300 hover:text-white transition-all text-xs sm:text-sm font-medium"
                   >
                     <span>💼 LinkedIn</span>
                     <span className="ml-auto text-slate-500">&nearr;</span>
@@ -127,7 +124,7 @@ export default function ContactSection() {
                     href={settings.twitter_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 p-3.5 rounded-xl bg-cyber-card border border-cyber-border hover:border-cyber-cyan text-slate-300 hover:text-white transition-all text-xs sm:text-sm font-medium"
+                    className="flex items-center gap-2.5 p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 text-slate-300 hover:text-white transition-all text-xs sm:text-sm font-medium"
                   >
                     <span>🐦 Twitter</span>
                     <span className="ml-auto text-slate-500">&nearr;</span>
@@ -138,7 +135,7 @@ export default function ContactSection() {
                     href={settings.telegram_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 p-3.5 rounded-xl bg-cyber-card border border-cyber-border hover:border-cyber-cyan text-slate-300 hover:text-white transition-all text-xs sm:text-sm font-medium"
+                    className="flex items-center gap-2.5 p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 text-slate-300 hover:text-white transition-all text-xs sm:text-sm font-medium"
                   >
                     <span>✈️ Telegram</span>
                     <span className="ml-auto text-slate-500">&nearr;</span>
@@ -149,7 +146,7 @@ export default function ContactSection() {
                     href={settings.whatsapp_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 p-3.5 rounded-xl bg-cyber-card border border-cyber-border hover:border-cyber-cyan text-slate-300 hover:text-white transition-all text-xs sm:text-sm font-medium"
+                    className="flex items-center gap-2.5 p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-white/20 text-slate-300 hover:text-white transition-all text-xs sm:text-sm font-medium"
                   >
                     <span>💬 WhatsApp</span>
                     <span className="ml-auto text-slate-500">&nearr;</span>
@@ -160,8 +157,8 @@ export default function ContactSection() {
           </div>
 
           {/* Right Column: Direct Message Box */}
-          <div className="lg:col-span-7 rounded-2xl bg-cyber-card/75 border border-cyber-border p-6 sm:p-8 shadow-xl">
-            <h3 className="text-xl font-bold text-white mb-1">Transmit an Inquiry</h3>
+          <div className="lg:col-span-7 rounded-2xl bg-white/[0.02] border border-white/[0.08] p-6 sm:p-8 shadow-2xl">
+            <h3 className="text-xl font-bold text-white mb-1">Send a Message</h3>
             <p className="text-slate-400 text-xs sm:text-sm mb-6">
               Messages are saved directly and trigger immediate notification.
             </p>
@@ -179,7 +176,7 @@ export default function ContactSection() {
                     placeholder="e.g. Alex Hunter"
                     value={formData.name}
                     onChange={e => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-cyber-surface border border-cyber-border text-white text-sm focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-[#0c0e12] border border-white/[0.08] text-white text-sm focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-colors"
                   />
                 </div>
 
@@ -194,7 +191,7 @@ export default function ContactSection() {
                     placeholder="alex@company.com"
                     value={formData.email}
                     onChange={e => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-cyber-surface border border-cyber-border text-white text-sm focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-[#0c0e12] border border-white/[0.08] text-white text-sm focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-colors"
                   />
                 </div>
               </div>
@@ -210,7 +207,7 @@ export default function ContactSection() {
                   placeholder="Tell me about the project, team, or opportunity..."
                   value={formData.message}
                   onChange={e => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-cyber-surface border border-cyber-border text-white text-sm focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-[#0c0e12] border border-white/[0.08] text-white text-sm focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-colors resize-none"
                 />
               </div>
 
@@ -221,7 +218,7 @@ export default function ContactSection() {
                       ? 'bg-emerald-500/15 border border-emerald-500/40 text-emerald-300'
                       : status.state === 'error'
                       ? 'bg-red-500/15 border border-red-500/40 text-red-300'
-                      : 'bg-cyber-cyan/15 border border-cyber-cyan/40 text-cyber-cyan'
+                      : 'bg-white/10 border border-white/20 text-white'
                   }`}
                 >
                   {status.msg}
@@ -231,9 +228,9 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={status.state === 'sending'}
-                className="w-full py-3.5 rounded-xl font-semibold text-sm tracking-wide bg-gradient-to-r from-cyber-cyan to-cyber-blue text-cyber-bg hover:opacity-95 hover:shadow-[0_0_24px_rgba(0,212,255,0.4)] disabled:opacity-50 transition-all cursor-pointer"
+                className="w-full py-3.5 rounded-xl font-bold text-sm tracking-wide bg-white text-zinc-950 hover:bg-slate-200 disabled:opacity-50 transition-all cursor-pointer shadow-sm"
               >
-                {status.state === 'sending' ? 'Transmitting...' : 'Send Message 🚀'}
+                {status.state === 'sending' ? 'Transmitting...' : 'Send Message'}
               </button>
             </form>
           </div>

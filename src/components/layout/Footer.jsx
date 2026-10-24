@@ -7,7 +7,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-cyber-border bg-cyber-bg py-10 text-xs text-slate-400 select-none">
+    <footer className="relative border-t border-white/[0.08] bg-cyber-bg py-10 text-xs text-slate-400 select-none">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
 
         <div className="flex items-center gap-3">
@@ -26,7 +26,7 @@ export default function Footer() {
               href={settings.github_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-cyber-cyan transition-colors"
+              className="hover:text-white transition-colors"
             >
               GitHub
             </a>
@@ -36,12 +36,12 @@ export default function Footer() {
               href={settings.linkedin_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-cyber-cyan transition-colors"
+              className="hover:text-white transition-colors"
             >
               LinkedIn
             </a>
           )}
-          <a href="#home" className="hover:text-cyber-cyan transition-colors">
+          <a href="#home" className="hover:text-white transition-colors">
             Back to Top &uarr;
           </a>
           <span className="text-slate-600">|</span>

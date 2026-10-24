@@ -4,13 +4,13 @@
 
 @layer base {
   :root {
-    --cyber-bg: #0a0e1a;
-    --cyber-surface: #0f1629;
-    --cyber-card: #131d35;
-    --cyber-border: #1e2d4d;
-    --cyber-cyan: #00d4ff;
-    --cyber-blue: #3b82f6;
-    --cyber-purple: #8b5cf6;
+    --cyber-bg: #08090b;
+    --cyber-surface: #0f1115;
+    --cyber-card: #14171d;
+    --cyber-border: #20242c;
+    --cyber-cyan: #38bdf8;
+    --cyber-blue: #2563eb;
+    --cyber-purple: #94a3b8;
     --cyber-emerald: #10b981;
   }
 
@@ -21,7 +21,7 @@
 
   body {
     background-color: var(--cyber-bg);
-    color: #e2e8f0;
+    color: #f1f5f9;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -33,21 +33,15 @@
     height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #0a0e1a;
+    background: #08090b;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1e2d4d;
+    background: #20242c;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #00d4ff;
+    background: #38bdf8;
   }
-}
-
-/* Hide native cursor when custom cursor is active on fine-pointer devices */
-.custom-cursor-active,
-.custom-cursor-active * {
-  cursor: none !important;
 }
 
 /* Background PCB Canvas Wires */

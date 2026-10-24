@@ -6,7 +6,7 @@ import { useSiteSettings } from '../../hooks/useSiteSettings';
 const SKILL_GROUPS = [
   {
     category: 'Languages',
-    accent: '#00d4ff',
+    accent: '#38bdf8',
     skills: ['Python', 'C / C++', 'JavaScript', 'TypeScript'],
   },
   {
@@ -16,12 +16,12 @@ const SKILL_GROUPS = [
   },
   {
     category: 'AI & Machine Learning',
-    accent: '#8b5cf6',
+    accent: '#6366f1',
     skills: ['YOLO', 'LLaMA 3', 'NLLB-200', 'Gemini API', 'AI Agents', 'HuggingFace'],
   },
   {
     category: 'Embedded & Robotics',
-    accent: '#f97316',
+    accent: '#f59e0b',
     skills: ['Arduino', 'Circuit Design'],
   },
   {
@@ -46,8 +46,8 @@ const CERTIFICATIONS = [
 
 const LANGUAGES = [
   { flag: '🇸🇦', name: 'Arabic', level: 'Native (100%)', width: '100%', color: '#10b981' },
-  { flag: '🇬🇧', name: 'English', level: 'B2 – Upper-Intermediate', width: '72%', color: '#3b82f6' },
-  { flag: '🇯🇵', name: 'Japanese', level: 'Beginner (Self-studying)', width: '22%', color: '#8b5cf6' },
+  { flag: '🇬🇧', name: 'English', level: 'B2 – Upper-Intermediate', width: '72%', color: '#38bdf8' },
+  { flag: '🇯🇵', name: 'Japanese', level: 'Beginner (Self-studying)', width: '22%', color: '#94a3b8' },
 ];
 
 export default function TrustSection() {
@@ -70,12 +70,8 @@ export default function TrustSection() {
     <section
       id="skills"
       ref={sectionRef}
-      className="relative py-24 bg-cyber-surface/60 overflow-hidden border-t border-cyber-border"
+      className="relative py-24 bg-cyber-surface/40 overflow-hidden border-t border-white/[0.06]"
     >
-      {/* Background radial accent */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyber-purple/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyber-cyan/5 rounded-full blur-3xl pointer-events-none" />
-
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
@@ -84,12 +80,12 @@ export default function TrustSection() {
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <p className="text-cyber-cyan font-mono text-xs sm:text-sm tracking-widest uppercase mb-2">
+          <p className="text-sky-400 font-mono text-xs sm:text-sm tracking-widest uppercase mb-2">
             // credentials & engineering arsenal
           </p>
           <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight mb-4">
             Technical{' '}
-            <span className="bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-purple bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
               Arsenal
             </span>
             {' '}& Trust
@@ -117,17 +113,17 @@ export default function TrustSection() {
           }`}
         >
           {/* University Card */}
-          <div className="rounded-2xl bg-cyber-card/70 border border-cyber-border p-6 flex flex-col justify-between hover:border-cyber-cyan/40 transition-colors duration-300 shadow-sm">
+          <div className="rounded-2xl bg-white/[0.02] border border-white/[0.08] p-6 flex flex-col justify-between hover:border-white/20 transition-all duration-300 shadow-sm">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyber-cyan/20 to-cyber-blue/20 border border-cyber-cyan/30 flex items-center justify-center text-2xl shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-2xl shrink-0">
                   🎓
                 </div>
                 <div>
                   <h3 className="text-white font-bold text-sm sm:text-base">
                     {settings.education?.university || 'Helwan National University'}
                   </h3>
-                  <p className="text-cyber-cyan text-xs font-mono">
+                  <p className="text-sky-400 text-xs font-mono">
                     {settings.education?.location || 'Cairo, Egypt'}
                   </p>
                 </div>
@@ -144,8 +140,8 @@ export default function TrustSection() {
                 </p>
               </div>
             </div>
-            <div className="pt-5 mt-4 border-t border-cyber-border/70 flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="pt-5 mt-4 border-t border-white/[0.08] flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-xs text-emerald-400 font-medium">
                 {settings.education?.status || 'Currently Enrolled & Active'}
               </span>
@@ -153,9 +149,9 @@ export default function TrustSection() {
           </div>
 
           {/* Certifications Card */}
-          <div className="rounded-2xl bg-cyber-card/70 border border-cyber-border p-6 flex flex-col justify-between hover:border-cyber-cyan/40 transition-colors duration-300 shadow-sm">
+          <div className="rounded-2xl bg-white/[0.02] border border-white/[0.08] p-6 flex flex-col justify-between hover:border-white/20 transition-all duration-300 shadow-sm">
             <div className="space-y-4">
-              <p className="text-xs font-mono text-slate-400 tracking-widest uppercase">Certifications</p>
+              <p className="text-xs font-mono text-slate-400 tracking-wider uppercase font-semibold">Certifications</p>
               <div className="space-y-4">
                 {CERTIFICATIONS.map(c => (
                   <div key={c.title} className="flex items-start gap-3">
@@ -168,7 +164,7 @@ export default function TrustSection() {
                 ))}
               </div>
             </div>
-            <div className="pt-4 mt-4 border-t border-cyber-border/70">
+            <div className="pt-4 mt-4 border-t border-white/[0.08]">
               <p className="text-xs text-slate-400 font-mono">
                 High School Grade: <span className="text-emerald-400 font-bold">{settings.high_school_grade || '87% — High Honors'}</span>
               </p>
@@ -176,16 +172,16 @@ export default function TrustSection() {
           </div>
 
           {/* Languages Card */}
-          <div className="rounded-2xl bg-cyber-card/70 border border-cyber-border p-6 flex flex-col justify-between hover:border-cyber-cyan/40 transition-colors duration-300 shadow-sm">
+          <div className="rounded-2xl bg-white/[0.02] border border-white/[0.08] p-6 flex flex-col justify-between hover:border-white/20 transition-all duration-300 shadow-sm">
             <div className="space-y-4">
-              <p className="text-xs font-mono text-slate-400 tracking-widest uppercase">Language Proficiency</p>
+              <p className="text-xs font-mono text-slate-400 tracking-wider uppercase font-semibold">Language Proficiency</p>
               <div className="space-y-4">
                 {LANGUAGES.map(lang => (
                   <LanguageBar key={lang.name} {...lang} />
                 ))}
               </div>
             </div>
-            <div className="pt-4 mt-4 border-t border-cyber-border/70">
+            <div className="pt-4 mt-4 border-t border-white/[0.08]">
               <p className="text-xs text-slate-400">
                 🇯🇵 Japanese — {settings.japanese_level || 'actively self-studying vocabulary & grammar'}
               </p>

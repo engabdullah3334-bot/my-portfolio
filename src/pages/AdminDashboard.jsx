@@ -424,7 +424,7 @@ function SiteSettingsTab() {
       <button
         type="submit"
         disabled={saving}
-        className="w-full py-4 rounded-2xl font-bold text-sm bg-gradient-to-r from-cyber-cyan to-cyber-blue text-cyber-bg hover:opacity-90 disabled:opacity-50 transition-all cursor-pointer shadow-lg text-base"
+        className="w-full py-3.5 rounded-xl font-bold text-sm bg-white text-zinc-950 hover:bg-slate-200 disabled:opacity-50 transition-all cursor-pointer shadow-sm text-base"
       >
         {saving ? 'Syncing to Supabase...' : '💾 Save All Site Settings'}
       </button>
@@ -919,7 +919,7 @@ export default function AdminDashboard() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="px-8 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-cyber-cyan to-cyber-blue text-cyber-bg hover:opacity-90 disabled:opacity-50 transition-all cursor-pointer shadow-lg"
+                  className="px-8 py-3 rounded-xl font-bold text-sm bg-white text-zinc-950 hover:bg-slate-200 disabled:opacity-50 transition-all cursor-pointer shadow-sm"
                 >
                   {submitting ? 'Committing Changes...' : editingId ? 'Update Project' : 'Publish Project'}
                 </button>
