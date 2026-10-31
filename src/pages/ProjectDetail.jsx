@@ -32,9 +32,9 @@ export default function ProjectDetail() {
 
           if (!error && data) {
             setProject(data);
-            // Increment view count via RPC
+            // Increment view count via RPC (PostgrestFilterBuilder is PromiseLike; use .then instead of .catch)
             if (data.id) {
-              supabase.rpc('increment_project_views', { proj_id: data.id }).catch(() => {});
+              supabase.rpc('increment_project_views', { proj_id: data.id }).then(() => {}, () => {});
             }
             return;
           }

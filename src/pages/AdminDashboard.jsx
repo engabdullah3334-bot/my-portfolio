@@ -501,9 +501,15 @@ export default function AdminDashboard() {
 
   useEffect(() => { loadData(); }, [loadData]);
 
+  const toSafeSlug = (slugVal, titleVal) => {
+    const raw = (slugVal && String(slugVal).trim()) || String(titleVal || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    return raw || `project-${Math.random().toString(36).slice(2, 8)}`;
+  };
+
   const handleSaveBulkProjects = async (newProjectsList) => {
     const sanitized = newProjectsList.map(p => ({
       ...p,
+      slug: toSafeSlug(p.slug, p.title),
       rank: p.rank ? parseInt(p.rank, 10) : null,
       sort_order: parseInt(p.sort_order, 10) || 0,
       highlights: Array.isArray(p.highlights) ? p.highlights : [],
@@ -524,6 +530,7 @@ export default function AdminDashboard() {
   const handleSaveSingleProjectJson = async (updatedProj) => {
     const sanitized = {
       ...updatedProj,
+      slug: toSafeSlug(updatedProj.slug, updatedProj.title),
       rank: updatedProj.rank ? parseInt(updatedProj.rank, 10) : null,
       sort_order: parseInt(updatedProj.sort_order, 10) || 0,
       highlights: Array.isArray(updatedProj.highlights) ? updatedProj.highlights : [],
@@ -612,10 +619,12 @@ export default function AdminDashboard() {
         image_path = fileName;
       }
 
+      const cleanSlug = (form.slug.trim() || form.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')) || `project-${Date.now().toString(36)}`;
+
       const payload = {
         title: form.title.trim(),
         subtitle: form.subtitle.trim() || null,
-        slug: form.slug.trim() || form.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
+        slug: cleanSlug,
         category: form.category,
         year: form.year.trim() || null,
         status: form.status,

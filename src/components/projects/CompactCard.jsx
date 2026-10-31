@@ -5,7 +5,7 @@ import { CATEGORY_META } from './FeaturedCard';
 
 export default function CompactCard({ project, index = 0 }) {
   const cat = CATEGORY_META[project.category] ?? CATEGORY_META.soon;
-  const isComingSoon = !project.github_url && !project.demo_url;
+  const isComingSoon = project.category === 'soon' && !project.github_url && !project.demo_url && !project.details;
   const projectLink = `/projects/${project.slug || project.id}`;
 
   return (
@@ -51,48 +51,46 @@ export default function CompactCard({ project, index = 0 }) {
         </div>
 
         {/* Action Buttons */}
-        {!isComingSoon && (
-          <div className="flex items-center gap-2 pt-2 border-t border-white/[0.06]">
-            <Link
-              to={projectLink}
-              className="text-xs font-semibold text-sky-400 hover:text-white hover:underline inline-flex items-center gap-1"
+        <div className="flex items-center gap-2 pt-2 border-t border-white/[0.06]">
+          <Link
+            to={projectLink}
+            className="text-xs font-semibold text-sky-400 hover:text-white hover:underline inline-flex items-center gap-1"
+          >
+            <span>View Case Study</span>
+            <span>&rarr;</span>
+          </Link>
+          {project.github_url && (
+            <a
+              href={project.github_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-auto text-xs text-slate-400 hover:text-white transition-colors"
             >
-              <span>View Case Study</span>
-              <span>&rarr;</span>
-            </Link>
-            {project.github_url && (
-              <a
-                href={project.github_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-auto text-xs text-slate-400 hover:text-white transition-colors"
-              >
-                GitHub
-              </a>
-            )}
-            {project.demo_url && (
-              <a
-                href={project.demo_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-sky-400 hover:text-white font-medium transition-colors"
-              >
-                Live Demo
-              </a>
-            )}
-            {(project.custom_links || []).map((lnk, idx) => (
-              <a
-                key={idx}
-                href={lnk.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-slate-300 hover:text-white font-medium transition-colors"
-              >
-                {lnk.label}
-              </a>
-            ))}
-          </div>
-        )}
+              GitHub
+            </a>
+          )}
+          {project.demo_url && (
+            <a
+              href={project.demo_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-sky-400 hover:text-white font-medium transition-colors"
+            >
+              Live Demo
+            </a>
+          )}
+          {(project.custom_links || []).map((lnk, idx) => (
+            <a
+              key={idx}
+              href={lnk.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-slate-300 hover:text-white font-medium transition-colors"
+            >
+              {lnk.label}
+            </a>
+          ))}
+        </div>
 
       </div>
     </div>
